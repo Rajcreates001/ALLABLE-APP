@@ -1,0 +1,9 @@
+Flask
+torch
+torchvision
+transformers
+Pillow
+pytesseract
+opencv-python
+numpy
+mediapipe
