@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: backend
+    rootDir: backend  # Tells this service to look inside the 'backend' folder
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn ml_service:app"
+  - type: static
+    name: frontend
+    rootDir: frontend # Tells this service to look inside the 'frontend' folder
+    buildCommand: "npm run build"
+    publishDir: "./build"
