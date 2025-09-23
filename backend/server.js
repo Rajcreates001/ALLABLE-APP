@@ -254,7 +254,7 @@ function getGraphHopperIcon(sign) {
 
 app.post('/api/voice-assistant', async (req, res) => {
     const apiKey1 = 'AIzaSyDFR-X4UgOxgWwOEqfkiyzxDF3a8WZUtrE';
-    if (!apiKey) {
+    if (!apiKey1) {
         console.error("Gemini error: API key is missing.");
         return res.status(500).json({ message: 'Server configuration error: Gemini API key not set.' });
     }
