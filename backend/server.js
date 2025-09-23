@@ -253,7 +253,7 @@ function getGraphHopperIcon(sign) {
 }
 
 app.post('/api/voice-assistant', async (req, res) => {
-    const apiKey = 'AIzaSyDFR-X4UgOxgWwOEqfkiyzxDF3a8WZUtrE';
+    const apiKey1 = 'AIzaSyDFR-X4UgOxgWwOEqfkiyzxDF3a8WZUtrE';
     if (!apiKey) {
         console.error("Gemini error: API key is missing.");
         return res.status(500).json({ message: 'Server configuration error: Gemini API key not set.' });
@@ -262,7 +262,7 @@ app.post('/api/voice-assistant', async (req, res) => {
     if (!query) {
         return res.status(400).json({ message: 'No query provided.' });
     }
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey1}`;
     const systemInstruction = `You are ALLABLE, a friendly and helpful voice assistant. It is currently Wednesday, September 24, 2025 at 1:11 AM in Kalya, Karnataka, India. Keep your answers concise, clear, and easy to understand.`;
     const payload = { contents: [{ role: "user", parts: [{ text: query }] }], systemInstruction: { role: "system", parts: [{ text: systemInstruction }] }, generationConfig: { temperature: 0.7, maxOutputTokens: 100, } };
     try {
