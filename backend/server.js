@@ -283,6 +283,15 @@ app.post('/api/voice-assistant', async (req, res) => {
         res.status(500).json({ message: "Sorry, I couldn't process your request." });
     }
 });
+const path = require('path');
+
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Fallback for all routes not matched by API
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Node.js server running on http://localhost:${PORT}`);
